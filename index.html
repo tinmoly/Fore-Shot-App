@@ -66,10 +66,10 @@ button:active{transform:translateY(3px) scale(.98);box-shadow:0 2px 0 rgba(0,0,0
 .badge-content{text-align:center}
 .random-total-line{font-weight:400}
 .mishit-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;width:100%;margin-top:10px}
-.mishit-btn{width:100%;min-height:64px;display:flex;align-items:center;justify-content:center;color:#000;border:none;border-radius:12px;padding:8px 10px;font-size:20px;font-weight:800;line-height:1.1;box-shadow:0 6px 0 rgba(0,0,0,.25),0 10px 18px rgba(0,0,0,.25);cursor:pointer}
+.mishit-btn{width:100%;min-height:58px;display:flex;align-items:center;justify-content:center;color:#000;border:none;border-radius:12px;padding:6px 10px;font-size:20px;font-weight:800;line-height:1.1;box-shadow:0 6px 0 rgba(0,0,0,.25),0 10px 18px rgba(0,0,0,.25);cursor:pointer}
 .skull-btn{background:#f4a261;box-shadow:0 6px 0 #c57f3d,0 10px 18px rgba(0,0,0,.25)}
 .duff-btn{background:#e9c46a;box-shadow:0 6px 0 #b89445,0 10px 18px rgba(0,0,0,.25)}
-.shank-btn{background:#7b4b2a;color:#fff;box-shadow:0 7px 0 #5a351d,0 10px 18px rgba(0,0,0,.25)}
+.shank-btn{background:#8b5a2b;color:#fff;box-shadow:0 8px 0 #5f3d1c,0 10px 18px rgba(0,0,0,.25)}
 
 .history-card{padding:10px;background:#1c7c5b;border-radius:10px;cursor:pointer}
 .history-wrapper{margin-bottom:10px}
@@ -89,9 +89,9 @@ button:active{transform:translateY(3px) scale(.98);box-shadow:0 2px 0 rgba(0,0,0
 </div>
 </div>
 
-<div id="clubRow" class="pill-row" style="justify-content: center; flex-direction: column; align-items: center; overflow-x: visible;"><div style="display: flex; gap: 8px; align-items: center; justify-content: center; flex-wrap: wrap; width: 100%;"><button class="pill-btn" disabled="">Wind</button><div class="range-speed"><button class="range-speed-btn">-</button><div class="range-speed-value">0 mph</div><button class="range-speed-btn">+</button></div></div><div style="display: flex; gap: 8px; align-items: center; justify-content: center; flex-wrap: wrap; width: 100%;"><button class="pill-btn" disabled="">Temp</button><div class="range-speed range-temp-stepper"><button class="range-speed-btn">-</button><div class="range-speed-value range-temp-value">80°F</div><button class="range-speed-btn">+</button></div></div></div>
+<div id="clubRow" class="pill-row" style="justify-content: center; flex-direction: column; align-items: center; overflow-x: visible;"><div style="display: flex; gap: 8px; align-items: center; justify-content: center; flex-wrap: wrap; width: 100%;"><button class="pill-btn" disabled="">Wind</button><div class="range-speed"><button class="range-speed-btn">-</button><div class="range-speed-value">⬇ 25 mph</div><button class="range-speed-btn">+</button></div></div><div style="display: flex; gap: 8px; align-items: center; justify-content: center; flex-wrap: wrap; width: 100%;"><button class="pill-btn" disabled="">Temp</button><div class="range-speed range-temp-stepper"><button class="range-speed-btn">-</button><div class="range-speed-value range-temp-value">80°F</div><button class="range-speed-btn">+</button></div></div></div>
 <div id="distanceRow" class="pill-row"><button class="pill-btn">62°</button><button class="pill-btn">60°</button><button class="pill-btn">58°</button><button class="pill-btn">56°</button><button class="pill-btn">54°</button><button class="pill-btn active">52°</button><button class="pill-btn">UW</button><button class="pill-btn">48°</button><button class="pill-btn">PW</button><button class="pill-btn">9i</button><button class="pill-btn">8i</button><button class="pill-btn">7i</button><button class="pill-btn">6i</button><button class="pill-btn">5i</button><button class="pill-btn">4i</button><button class="pill-btn">3i</button><button class="pill-btn">5h</button><button class="pill-btn">4h</button><button class="pill-btn">4w</button><button class="pill-btn">D</button></div>
-<div id="modeTarget" class="mode-target">Current Shot: 52° - 112y</div>
+<div id="modeTarget" class="mode-target">Current Shot: 52° - 100y</div>
 
 <div style="display:flex;flex-direction:column;align-items:center;">
 
@@ -114,13 +114,13 @@ button:active{transform:translateY(3px) scale(.98);box-shadow:0 2px 0 rgba(0,0,0
 </div>
 
 <div class="stats">
-<p>✅ Made: <span id="made">0</span> | ⛔ Missed: <span id="missed">0</span></p>
+<p>✅ Made: <span id="made">0</span> | ⛔ Missed: <span id="missed">2</span></p>
 <p>🚩 Make %: <span id="percent">0</span>%</p>
 <p><span id="streakTitle">Streak</span>: <span id="streak">0</span> <span id="streakLabel"></span></p>
-<p>Duffs: <span id="duffs">0</span><span id="duffMarks"></span> | Shanks: <span id="shanks">0</span><span id="shankMarks"></span> | Skulls: <span id="skulls">0</span><span id="skullMarks"></span></p>
+<p>Duffs: <span id="duffs">0</span><span id="duffMarks"></span> | Shanks: <span id="shanks">2</span><span id="shankMarks"> 😡😡</span> | Skulls: <span id="skulls">0</span><span id="skullMarks"></span></p>
 </div>
 
-<div id="targetBadge" class="badge random-badge"><div class="badge-content">Current Target:<br>🎯 52° - 112y<br>⛅ 0 mph, 80°F<br><span class="random-total-line">⛳ Total Range Shots: 0</span></div></div>
+<div id="targetBadge" class="badge random-badge"><div class="badge-content">Current Target:<br>🎯 52° - 100y<br>⛅ Head Wind ⬇ 25 mph, 80°F<br><span class="random-total-line">⛳ Total Range Shots: 2</span></div></div>
 
 <div style="display:flex;justify-content:space-between;gap:16px;margin-top:10px;width:100%;">
 <button onclick="newSession()" style="flex:1;background:#0096FF;color:#000;padding:6px 10px;font-size:20px;font-weight:800;border:none;border-radius:12px;box-shadow:0 6px 0 #0074c7,0 14px 22px rgba(0,0,0,.45);cursor:pointer;">🔄️ New Session</button>
