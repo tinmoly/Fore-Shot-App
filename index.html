@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0059)file:///G:/My%20Drive/Golf/Fore!Shot%20App/index_v11.1.html -->
+<!-- saved from url=(0057)file:///G:/My%20Drive/Golf/Fore!Shot%20App/index_v12.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style data-merge-styles="true"></style>
 
 <style data-merge-styles="true"></style><meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,10 +65,11 @@ button:active{transform:translateY(3px) scale(.98);box-shadow:0 2px 0 rgba(0,0,0
 .badge.random-badge{background:#1d5b86;color:#fff}
 .badge-content{text-align:center}
 .random-total-line{font-weight:400}
-.mishit-row{display:grid;grid-template-columns:1fr 1fr;gap:60px;width:100%;margin-top:10px}
+.mishit-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;width:100%;margin-top:10px}
 .mishit-btn{width:100%;color:#000;border:none;border-radius:12px;padding:12px 12px;font-size:20px;font-weight:800;box-shadow:0 5px 0 rgba(0,0,0,.25),0 10px 18px rgba(0,0,0,.25);cursor:pointer}
 .skull-btn{background:#f4a261;box-shadow:0 5px 0 #c57f3d,0 10px 18px rgba(0,0,0,.25)}
 .duff-btn{background:#e9c46a;box-shadow:0 5px 0 #b89445,0 10px 18px rgba(0,0,0,.25)}
+.shank-btn{background:#7b4b2a;color:#fff;box-shadow:0 5px 0 #5a351d,0 10px 18px rgba(0,0,0,.25)}
 
 .history-card{padding:10px;background:#1c7c5b;border-radius:10px;cursor:pointer}
 .history-wrapper{margin-bottom:10px}
@@ -88,9 +89,9 @@ button:active{transform:translateY(3px) scale(.98);box-shadow:0 2px 0 rgba(0,0,0
 </div>
 </div>
 
-<div id="clubRow" class="pill-row" style="justify-content: center; flex-direction: column; align-items: center; overflow-x: visible;"><div style="display: flex; gap: 8px; align-items: center; justify-content: center; flex-wrap: wrap; width: 100%;"><button class="pill-btn" disabled="">Wind</button><div class="range-speed"><button class="range-speed-btn">-</button><div class="range-speed-value">⬇ 25 mph</div><button class="range-speed-btn">+</button></div></div><div style="display: flex; gap: 8px; align-items: center; justify-content: center; flex-wrap: wrap; width: 100%;"><button class="pill-btn" disabled="">Temp</button><div class="range-speed range-temp-stepper"><button class="range-speed-btn">-</button><div class="range-speed-value range-temp-value">80°F</div><button class="range-speed-btn">+</button></div></div></div>
+<div id="clubRow" class="pill-row" style="justify-content: center; flex-direction: column; align-items: center; overflow-x: visible;"><div style="display: flex; gap: 8px; align-items: center; justify-content: center; flex-wrap: wrap; width: 100%;"><button class="pill-btn" disabled="">Wind</button><div class="range-speed"><button class="range-speed-btn">-</button><div class="range-speed-value">0 mph</div><button class="range-speed-btn">+</button></div></div><div style="display: flex; gap: 8px; align-items: center; justify-content: center; flex-wrap: wrap; width: 100%;"><button class="pill-btn" disabled="">Temp</button><div class="range-speed range-temp-stepper"><button class="range-speed-btn">-</button><div class="range-speed-value range-temp-value">80°F</div><button class="range-speed-btn">+</button></div></div></div>
 <div id="distanceRow" class="pill-row"><button class="pill-btn">62°</button><button class="pill-btn">60°</button><button class="pill-btn">58°</button><button class="pill-btn">56°</button><button class="pill-btn">54°</button><button class="pill-btn active">52°</button><button class="pill-btn">UW</button><button class="pill-btn">48°</button><button class="pill-btn">PW</button><button class="pill-btn">9i</button><button class="pill-btn">8i</button><button class="pill-btn">7i</button><button class="pill-btn">6i</button><button class="pill-btn">5i</button><button class="pill-btn">4i</button><button class="pill-btn">3i</button><button class="pill-btn">5h</button><button class="pill-btn">4h</button><button class="pill-btn">4w</button><button class="pill-btn">D</button></div>
-<div id="modeTarget" class="mode-target">Current Shot: 52° - 100y</div>
+<div id="modeTarget" class="mode-target">Current Shot: 52° - 112y</div>
 
 <div style="display:flex;flex-direction:column;align-items:center;">
 
@@ -108,6 +109,7 @@ button:active{transform:translateY(3px) scale(.98);box-shadow:0 2px 0 rgba(0,0,0
 
 <div class="mishit-row">
 <button class="mishit-btn duff-btn" onclick="recordDuff()">💩 Duff</button>
+<button class="mishit-btn shank-btn" onclick="recordShank()">🤬 Shank</button>
 <button class="mishit-btn skull-btn" onclick="recordSkull()">💀 Skull</button>
 </div>
 
@@ -115,10 +117,10 @@ button:active{transform:translateY(3px) scale(.98);box-shadow:0 2px 0 rgba(0,0,0
 <p>✅ Made: <span id="made">0</span> | ⛔ Missed: <span id="missed">0</span></p>
 <p>🚩 Make %: <span id="percent">0</span>%</p>
 <p><span id="streakTitle">Streak</span>: <span id="streak">0</span> <span id="streakLabel"></span></p>
-<p>Duffs: <span id="duffs">0</span><span id="duffMarks"></span> | Skulls: <span id="skulls">0</span><span id="skullMarks"></span></p>
+<p>Duffs: <span id="duffs">0</span><span id="duffMarks"></span> | Shanks: <span id="shanks">0</span><span id="shankMarks"></span> | Skulls: <span id="skulls">0</span><span id="skullMarks"></span></p>
 </div>
 
-<div id="targetBadge" class="badge random-badge"><div class="badge-content">Current Target:<br>🎯 52° - 100y<br>⛅ Head Wind ⬇ 25 mph, 80°F<br><span class="random-total-line">⛳ Total Range Shots: 0</span></div></div>
+<div id="targetBadge" class="badge random-badge"><div class="badge-content">Current Target:<br>🎯 52° - 112y<br>⛅ 0 mph, 80°F<br><span class="random-total-line">⛳ Total Range Shots: 0</span></div></div>
 
 <div style="display:flex;justify-content:space-between;gap:16px;margin-top:10px;width:100%;">
 <button onclick="newSession()" style="flex:1;background:#0096FF;color:#000;padding:6px 10px;font-size:20px;font-weight:800;border:none;border-radius:12px;box-shadow:0 6px 0 #0074c7,0 14px 22px rgba(0,0,0,.45);cursor:pointer;">🔄️ New Session</button>
@@ -134,7 +136,7 @@ button:active{transform:translateY(3px) scale(.98);box-shadow:0 2px 0 rgba(0,0,0
 </select>
 </div>
 
-<div id="history"><div class="history-wrapper"><div class="history-card"><strong>Session 1</strong><br>6/6/2026 - 100% (5 shots)</div><div class="accordion"><div><strong>52° - 103 yd (Range):</strong> 5/5 (100%) - Range Mode<br><span class="subtle">Wind: Head Wind ⬇ 20 mph, Temp: 80°F</span><br><span class="subtle">Misses - L-Left: 0 | L-Right: 0 | S-Left: 0 | S-Right: 0</span><br><span class="subtle">Duffs: 0 | Skulls: 0 | Best streak: 5</span></div><button style="display: block; width: 100%; margin-top: 10px; background: rgb(227, 66, 52); color: rgb(0, 0, 0); padding: 6px 10px; font-size: 20px; font-weight: 800; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; border-radius: 12px; cursor: pointer;">🗑️ Delete Session</button></div></div></div>
+<div id="history"><p style="opacity:.8">No sessions yet.</p></div>
 
 </div>
 
@@ -460,7 +462,7 @@ function createMissDir(){
 }
 
 function createStatBucket(){
- return {made:0,missed:0,duffs:0,skulls:0,missDir:createMissDir()}
+ return {made:0,missed:0,duffs:0,shanks:0,skulls:0,missDir:createMissDir()}
 }
 
 function createDistanceMap(factory){
@@ -532,6 +534,7 @@ function ensureStatsShape(obj){
      made:Number(bucket.made)||0,
      missed:Number(bucket.missed)||0,
      duffs:Number(bucket.duffs)||0,
+     shanks:Number(bucket.shanks)||0,
      skulls:Number(bucket.skulls)||0,
      missDir:{
       shortLeft:Number(bucket.missDir && bucket.missDir.shortLeft)||0,
@@ -719,6 +722,7 @@ function summarizeShotResults(history){
  let made=0
  let missed=0
  let duffs=0
+ let shanks=0
  let skulls=0
 
  history.forEach(shot=>{
@@ -729,6 +733,7 @@ function summarizeShotResults(history){
 
   missed++
   if(shot.type==="duff") duffs++
+  if(shot.type==="shank") shanks++
   if(shot.type==="skull") skulls++
  })
 
@@ -736,6 +741,7 @@ function summarizeShotResults(history){
   made:made,
   missed:missed,
   duffs:duffs,
+  shanks:shanks,
   skulls:skulls,
   total:made+missed
  }
@@ -1093,6 +1099,7 @@ function updateStats(){
  const made=modeStats.made
  const missed=modeStats.missed
  const duffs=modeStats.duffs
+ const shanks=modeStats.shanks
  const skulls=modeStats.skulls
  const total=modeStats.total
  const pct=total?Math.round(made/total*100):0
@@ -1102,6 +1109,8 @@ function updateStats(){
  $("percent").textContent=pct
  $("duffs").textContent=duffs
  $("duffMarks").textContent=duffs ? " "+"🧻".repeat(duffs) : ""
+ $("shanks").textContent=shanks
+ $("shankMarks").textContent=shanks ? " "+"😡".repeat(shanks) : ""
  $("skulls").textContent=skulls
  $("skullMarks").textContent=skulls ? " "+"☠️".repeat(skulls) : ""
 
@@ -1166,6 +1175,21 @@ function recordDuff(){
  st.duffs++
  streaks[targetSetMode][currentClub][currentDistance]=0
  shotHistory.push({type:"duff",club:currentClub,distance:currentDistance,mode:activePracticeMode,targetSetMode:targetSetMode,windDirection:null,windSpeed:isRangeMode()?rangeWindSpeed:null,temperature:isRangeMode()?rangeTemperature:null})
+ document.body.classList.remove("flash-green")
+ document.body.classList.add("flash-red")
+ setTimeout(()=>document.body.classList.remove("flash-red"),150)
+ persistLiveState()
+ advancePracticeTarget()
+ updateStats()
+}
+
+function recordShank(){
+ const activePracticeMode=getActivePracticeMode()
+ const st=getCurrentStats()
+ st.missed++
+ st.shanks++
+ streaks[targetSetMode][currentClub][currentDistance]=0
+ shotHistory.push({type:"shank",club:currentClub,distance:currentDistance,mode:activePracticeMode,targetSetMode:targetSetMode,windDirection:null,windSpeed:isRangeMode()?rangeWindSpeed:null,temperature:isRangeMode()?rangeTemperature:null})
  document.body.classList.remove("flash-green")
  document.body.classList.add("flash-red")
  setTimeout(()=>document.body.classList.remove("flash-red"),150)
@@ -1263,6 +1287,11 @@ function undoShot(){
   if(st.duffs>0) st.duffs--
  }
 
+ if(last.type==="shank" && st.missed>0){
+  st.missed--
+  if(st.shanks>0) st.shanks--
+ }
+
  if(last.type==="skull" && st.missed>0){
   st.missed--
   if(st.skulls>0) st.skulls--
@@ -1296,7 +1325,7 @@ function handleHistoryAction(){
 }
 
 function exportHistoryCSV(){
- const rows=[["Session","Date","Club","Yardage","Mode","Wind","Temp","Target ft","Made","Missed","Make %","Up and Down %","S-Left","S-Right","L-Left","L-Right","Duffs","Skulls","Total Mis-Hits","Best Streak"]]
+ const rows=[["Session","Date","Club","Yardage","Mode","Wind","Temp","Target ft","Made","Missed","Make %","Up and Down %","S-Left","S-Right","L-Left","L-Right","Duffs","Shanks","Skulls","Total Mis-Hits","Best Streak"]]
  const csvEscape=value=>{
   const text=String(value ?? "")
   return /[",\n]/.test(text) ? '"'+text.replace(/"/g,'""')+'"' : text
@@ -1319,6 +1348,7 @@ function exportHistoryCSV(){
  let grandMissed=0
  let grandMiss=createMissDir()
  let grandDuffs=0
+ let grandShanks=0
  let grandSkulls=0
 
  exportSessions.forEach((s,idx)=>{
@@ -1327,6 +1357,7 @@ function exportHistoryCSV(){
   let sessionMissed=0
   let sessionMiss=createMissDir()
   let sessionDuffs=0
+  let sessionShanks=0
   let sessionSkulls=0
 
   ALL_CLUBS.forEach(club=>{
@@ -1334,6 +1365,7 @@ function exportHistoryCSV(){
    let clubMissed=0
    let clubMiss=createMissDir()
    let clubDuffs=0
+   let clubShanks=0
    let clubSkulls=0
    let clubBestStreak=0
 
@@ -1345,6 +1377,7 @@ function exportHistoryCSV(){
      const made=st.made||0
      const missed=st.missed||0
      const duffs=st.duffs||0
+     const shanks=st.shanks||0
      const skulls=st.skulls||0
      const total=made+missed
      if(!total) return
@@ -1364,6 +1397,7 @@ function exportHistoryCSV(){
      sessionMiss.longLeft+=missDir.longLeft||0
      sessionMiss.longRight+=missDir.longRight||0
      sessionDuffs+=duffs
+     sessionShanks+=shanks
      sessionSkulls+=skulls
      clubMade+=made
      clubMissed+=missed
@@ -1372,6 +1406,7 @@ function exportHistoryCSV(){
      clubMiss.longLeft+=missDir.longLeft||0
      clubMiss.longRight+=missDir.longRight||0
      clubDuffs+=duffs
+     clubShanks+=shanks
      clubSkulls+=skulls
      clubBestStreak=Math.max(clubBestStreak,bestStreak)
 
@@ -1393,8 +1428,9 @@ function exportHistoryCSV(){
       missDir.longLeft||0,
       missDir.longRight||0,
       duffs,
+      shanks,
       skulls,
-      duffs+skulls,
+      duffs+shanks+skulls,
       bestStreak
      ])
     })
@@ -1410,8 +1446,9 @@ function exportHistoryCSV(){
    const clubLlPct=clubMissTotal?Math.round(clubMiss.longLeft/clubMissTotal*100):0
    const clubLrPct=clubMissTotal?Math.round(clubMiss.longRight/clubMissTotal*100):0
    const clubDuffPct=clubMissTotal?Math.round(clubDuffs/clubMissTotal*100):0
+   const clubShankPct=clubMissTotal?Math.round(clubShanks/clubMissTotal*100):0
    const clubSkullPct=clubMissTotal?Math.round(clubSkulls/clubMissTotal*100):0
-   const clubMisHitTotal=clubDuffs+clubSkulls
+   const clubMisHitTotal=clubDuffs+clubShanks+clubSkulls
    const clubMisHitPct=clubMissTotal?Math.round(clubMisHitTotal/clubMissTotal*100):0
 
    pushRow([
@@ -1432,6 +1469,7 @@ function exportHistoryCSV(){
     fmt(clubMiss.longLeft,clubLlPct),
     fmt(clubMiss.longRight,clubLrPct),
     fmt(clubDuffs,clubDuffPct),
+    fmt(clubShanks,clubShankPct),
     fmt(clubSkulls,clubSkullPct),
     fmt(clubMisHitTotal,clubMisHitPct),
     clubBestStreak
@@ -1446,8 +1484,9 @@ function exportHistoryCSV(){
   const llPct=totalMiss?Math.round(sessionMiss.longLeft/totalMiss*100):0
   const lrPct=totalMiss?Math.round(sessionMiss.longRight/totalMiss*100):0
   const duffPct=totalMiss?Math.round(sessionDuffs/totalMiss*100):0
+  const shankPct=totalMiss?Math.round(sessionShanks/totalMiss*100):0
   const skullPct=totalMiss?Math.round(sessionSkulls/totalMiss*100):0
-  const sessionMisHits=sessionDuffs+sessionSkulls
+  const sessionMisHits=sessionDuffs+sessionShanks+sessionSkulls
   const sessionMisHitPct=totalMiss?Math.round(sessionMisHits/totalMiss*100):0
 
   pushRow([
@@ -1468,6 +1507,7 @@ function exportHistoryCSV(){
    fmt(sessionMiss.longLeft,llPct),
    fmt(sessionMiss.longRight,lrPct),
    fmt(sessionDuffs,duffPct),
+   fmt(sessionShanks,shankPct),
    fmt(sessionSkulls,skullPct),
    fmt(sessionMisHits,sessionMisHitPct),
    ""
@@ -1480,6 +1520,7 @@ function exportHistoryCSV(){
   grandMiss.longLeft+=sessionMiss.longLeft
   grandMiss.longRight+=sessionMiss.longRight
   grandDuffs+=sessionDuffs
+  grandShanks+=sessionShanks
   grandSkulls+=sessionSkulls
  })
 
@@ -1491,8 +1532,9 @@ function exportHistoryCSV(){
  const gLLPct=gMissTotal?Math.round(grandMiss.longLeft/gMissTotal*100):0
  const gLRPct=gMissTotal?Math.round(grandMiss.longRight/gMissTotal*100):0
  const gDuffPct=gMissTotal?Math.round(grandDuffs/gMissTotal*100):0
+ const gShankPct=gMissTotal?Math.round(grandShanks/gMissTotal*100):0
  const gSkullPct=gMissTotal?Math.round(grandSkulls/gMissTotal*100):0
- const grandMisHits=grandDuffs+grandSkulls
+ const grandMisHits=grandDuffs+grandShanks+grandSkulls
  const gMisHitPct=gMissTotal?Math.round(grandMisHits/gMissTotal*100):0
  const grandHasRange=exportSessions.some(s=>hasRangeLabel(getSessionRangeModeLabel(s.stats)))
  const grandHasWedge=exportSessions.some(s=>hasWedgeLabel(getSessionRangeModeLabel(s.stats)))
@@ -1515,6 +1557,7 @@ function exportHistoryCSV(){
   fmt(grandMiss.longLeft,gLLPct),
   fmt(grandMiss.longRight,gLRPct),
   fmt(grandDuffs,gDuffPct),
+  fmt(grandShanks,gShankPct),
   fmt(grandSkulls,gSkullPct),
   fmt(grandMisHits,gMisHitPct),
   ""
@@ -1811,7 +1854,7 @@ function renderHistory(){
        ? '<br><span class="subtle">Up and Down: '+formatPercent(upAndDown)+'%</span>'
        : '<br><span class="subtle">Wind: '+(windSummary||"Not recorded")+', Temp: '+(tempSummary||"Not recorded")+'</span>')+
       '<br><span class="subtle">Misses - L-Left: '+(missDir.longLeft||0)+' | L-Right: '+(missDir.longRight||0)+' | S-Left: '+(missDir.shortLeft||0)+' | S-Right: '+(missDir.shortRight||0)+'</span>'+
-      '<br><span class="subtle">Duffs: '+(st.duffs||0)+' | Skulls: '+(st.skulls||0)+' | Best streak: '+bestStreak+'</span>'
+      '<br><span class="subtle">Duffs: '+(st.duffs||0)+' | Shanks: '+(st.shanks||0)+' | Skulls: '+(st.skulls||0)+' | Best streak: '+bestStreak+'</span>'
      acc.appendChild(row)
     })
    })
